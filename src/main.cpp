@@ -18,36 +18,36 @@ struct Movie
 
 int main()
 {
-	Movie theGentlemen;
+	Movie Revolver;
 	nlohmann::json dict;
 
-	theGentlemen.name = "Revolver";
-	theGentlemen.yearProduction = 2005;
-	theGentlemen.country = "Great Britain, France";
-	theGentlemen.screenwriter = "Guy Ritchie";
-	theGentlemen.regisseur = "Guy Ritchie";
-	theGentlemen.producer = "Luc Besson";
-	theGentlemen.studio = "Europa corp.";
+	Revolver.name = "Revolver";
+	Revolver.yearProduction = 2005;
+	Revolver.country = "Great Britain, France";
+	Revolver.screenwriter = "Guy Ritchie";
+	Revolver.regisseur = "Guy Ritchie";
+	Revolver.producer = "Luc Besson";
+	Revolver.studio = "Europa corp.";
 
-	theGentlemen.actors = { {"Actors", {{"Al", "Bill Moody"},
-										{"Avi", "Andre Benjamin"},
-										{"Benny", "Vincent Riotta"},
-										{"Billy", "Andrew Howard"},
-										{"Doreen", "Anjela Lauren Smith"},
-										{"Dorothy Macha", "Ray Liotta"},
-										{"Eddie A", "Ian Puleston-Davies"},
-										{"Francesca Annis", "Lily Walker"},
-										{"French Paul", "Terrence Maynard"},
-										{"Ivan", "Faruk Pruti"},
-										{"Jake Green", "Jason Statham"},
-										{"Joe", "Stephen Walters"},
-										{"Lord John", "Tom Wu"},
-										{"Rachel", "Elana Binysh"},
-										{"Sorter", "Mark Strong"},
-										{"Teddy", "Shend"},
-										{"Zach", "Vincent Pastore"}}} };
+	Revolver.actors = { {"Actors", {{"Al", "Bill Moody"},
+									{"Avi", "Andre Benjamin"},
+									{"Benny", "Vincent Riotta"},
+									{"Billy", "Andrew Howard"},
+									{"Doreen", "Anjela Lauren Smith"},
+									{"Dorothy Macha", "Ray Liotta"},
+									{"Eddie A", "Ian Puleston-Davies"},
+									{"Francesca Annis", "Lily Walker"},
+									{"French Paul", "Terrence Maynard"},
+									{"Ivan", "Faruk Pruti"},
+									{"Jake Green", "Jason Statham"},
+									{"Joe", "Stephen Walters"},
+									{"Lord John", "Tom Wu"},
+									{"Rachel", "Elana Binysh"},
+									{"Sorter", "Mark Strong"},
+									{"Teddy", "Shend"},
+									{"Zach", "Vincent Pastore"}}} };
 
-	std::ofstream movieFile("..//infoAboutMovie.json", std::ios::app);
+	std::ofstream movieFile("..//infoAboutMovie.json");
 
 	if (!movieFile.is_open())
 	{
@@ -56,13 +56,13 @@ int main()
 	}
 	else
 	{
-		dict[theGentlemen.name] = theGentlemen.actors;
-		dict[theGentlemen.name].emplace("Studio", theGentlemen.studio);
-		dict[theGentlemen.name].emplace("Producer", theGentlemen.producer);
-		dict[theGentlemen.name].emplace("Release", theGentlemen.yearProduction);
-		dict[theGentlemen.name].emplace("Country", theGentlemen.country);
-		dict[theGentlemen.name].emplace("Screenwriter", theGentlemen.screenwriter);
-		dict[theGentlemen.name].emplace("Regisseur", theGentlemen.regisseur);
+		dict[Revolver.name] = Revolver.actors;
+		dict[Revolver.name].emplace("Studio", Revolver.studio);
+		dict[Revolver.name].emplace("Producer", Revolver.producer);
+		dict[Revolver.name].emplace("Release", Revolver.yearProduction);
+		dict[Revolver.name].emplace("Country", Revolver.country);
+		dict[Revolver.name].emplace("Screenwriter", Revolver.screenwriter);
+		dict[Revolver.name].emplace("Regisseur", Revolver.regisseur);
 
 		movieFile << dict;
 
